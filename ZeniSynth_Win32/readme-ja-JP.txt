@@ -1,8 +1,7 @@
 ZeniSynth
 開発者: Masaru Nemoto <mnemoto.dev@gmail.com>
-ウェブサイト: https://sourceforge.net/projects/zenisynth/
-開発者Wiki: http://ex.homeunix.net/SX/
-Subversionのリポジトリ: http://svn.hylogics.net/zenisynth/
+ウェブサイト: http://sourceforge.jp/projects/zenisynth/
+ドキュメント: http://hylogics.net/doc/zenisynth/index
 
 [概要]
 ZeniSynthは"AutoHotKey"や"窓使いの憂鬱"、"のどか"のようなキーカスタマイザです。

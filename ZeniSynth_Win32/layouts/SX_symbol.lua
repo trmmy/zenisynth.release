@@ -45,6 +45,8 @@ function SX.symbol()
 			end
 		elseif SCAN==SC_COMMA then
 			sendScan(SC_LSHIFT,false) sendScan(SC_SEMICOLON,UP) sendScan(SC_LSHIFT,true) return true
+		elseif SCAN==SC_PERIOD then
+			sendScan(SC_MINUS,UP) return true
 		elseif SCAN==SC_SEMICOLON then
 			if SHIFT then
 				sendScan(SC_LSHIFT,false) sendScan(SC_REVERSESOLIDUS,UP) sendScan(SC_LSHIFT,true) return true

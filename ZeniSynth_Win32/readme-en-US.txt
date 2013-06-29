@@ -1,7 +1,6 @@
 ZeniSynth
 Author: Masaru Nemoto
-Website: https://sourceforge.net/projects/zenisynth/
-Developpers wiki(Most are written in Japanese): http://ex.homeunix.net/SX/
+Website: http://sourceforge.jp/projects/zenisynth/
 
 [Description]
 ZeniSynth is a key customizer like AutoHotKey.

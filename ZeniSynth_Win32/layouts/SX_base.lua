@@ -66,6 +66,8 @@ function SX.acquire(vkCode,scanCode,flags)
 		if DOWN and prevDOWN then
 			R=true
 			RCOUNT=RCOUNT+1
+		else
+			RCOUNT=0
 		end
 	else
 		ONESHOT=false
