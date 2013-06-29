@@ -21,22 +21,23 @@ SC_XR2=SC_KANA
 SHIFT=false
 CTRL=false
 
-function sendScan(scanCode)
-	sendScan(scanCode,false)
-	sendScan(scanCode,true)
-end
-
 function sendScan(scanCode,up)
-	flags=KEYEVENTF_SCANCODE
-	if up then flags=flags+KEYEVENTF_KEYUP end
-	
-	-- put an extended flag if this key cord is special
-	if 0xE000 <= scanCode then
-		flags=flags+KEYEVENTF_EXTENDEDKEY
-		scanCode=scanCode-0xE000
-	end
---	if SHIFT then flags=flags+KEYEVENTF_EXTENDEDKEY end
-	sendInput(0,scanCode,flags)
+
+--	if up == nil then
+--		sendScan(scanCode,false)
+--		sendScan(scanCode,true)
+--	else
+		flags=KEYEVENTF_SCANCODE
+		if up then flags=flags+KEYEVENTF_KEYUP end
+		
+		-- put an extended flag if this key cord is special
+		if 0xE000 <= scanCode then
+			flags=flags+KEYEVENTF_EXTENDEDKEY
+			scanCode=scanCode-0xE000
+		end
+	--	if SHIFT then flags=flags+KEYEVENTF_EXTENDEDKEY end
+		sendInput(0,scanCode,flags)
+--	end
 end
 
 function key(vkCode)
