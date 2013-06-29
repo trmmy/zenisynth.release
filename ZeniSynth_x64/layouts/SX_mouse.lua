@@ -1,5 +1,5 @@
 mouse.setCursorFriction(14000)
-local force=17000
+local force=18000
 local dir={left=false,right=false,up=false,down=false}
 local isClicked={L=false,R=false,M=false,X1=false,X2=false}
 
@@ -54,8 +54,24 @@ function SX.mouse()
 				end
 			end
 			return true
-		elseif	SCAN==SC_A then mouse.button(VK_LBUTTON,UP) isClicked.L=DOWN return true
-		elseif	SCAN==SC_Z then mouse.button(VK_RBUTTON,UP) isClicked.R=DOWN return true
+		elseif	SCAN==SC_A then
+			if UP==false then
+				if R==false then
+					mouse.button(VK_LBUTTON,UP) isClicked.L=DOWN return true
+				end
+			else
+				mouse.button(VK_LBUTTON,UP) isClicked.L=DOWN return true
+			end
+			return true
+		elseif	SCAN==SC_Z then
+			if UP==false then
+				if R==false then
+					mouse.button(VK_RBUTTON,UP) isClicked.R=DOWN return true
+				end
+			else
+				mouse.button(VK_RBUTTON,UP) isClicked.R=DOWN return true
+			end
+			return true
 		elseif	SCAN==SC_G or SCAN==SC_C then mouse.button(VK_MBUTTON,UP) isClicked.M=DOWN return true
 		elseif	SCAN==SC_T or SCAN==SC_X then 
 			if DOWN then mouse.wheel(120) return true end

@@ -1,43 +1,43 @@
 function SX.XR()
 
-	if VK==VK_XR and UP and ONESHOT then
+	if SCAN==SC_XR and UP and ONESHOT then
 		system.setIMEStatus(true)
 	end
 
 	if XR then
-		if VK==VK_E then key(VK_UP,UP) return true
-		elseif VK==VK_D then key(VK_DOWN,UP) return true
-		elseif VK==VK_S then key(VK_LEFT,UP) return true
-		elseif VK==VK_F then key(VK_RIGHT,UP) return true
-		elseif SCAN==SC_SEMICOLON then key(VK_RETURN,UP) return true
-		elseif VK==VK_XR then
+		if SCAN==SC_E then sendScan(SC_UP,UP) return true
+		elseif SCAN==SC_D then sendScan(SC_DOWN,UP) return true
+		elseif SCAN==SC_S then sendScan(SC_LEFT,UP) return true
+		elseif SCAN==SC_F then sendScan(SC_RIGHT,UP) return true
+		elseif SCAN==SC_SEMICOLON then sendScan(SC_ENTER,UP) return true
+		elseif SCAN==SC_XR then
 			return true
-		elseif VK==VK_X then key(VK_OEM_1,UP) return true
+		elseif SCAN==SC_X then sendScan(SC_QUOTE,UP) return true
 		
-		elseif VK==VK_J then key(VK_DELETE,UP) return true
-		elseif VK==VK_I then key(VK_HOME,UP) return true
-		elseif VK==VK_K then key(VK_END,UP) return true
-		elseif VK==VK_O then key(VK_PRIOR,UP) return true
-		elseif VK==VK_L then key(VK_NEXT,UP) return true
-		elseif VK==VK_SPACE then key(VK_BACK,UP) return true
-		elseif SCAN==SC_1 then key(VK_F1,UP) return true
-		elseif SCAN==SC_2 then key(VK_F2,UP) return true
-		elseif SCAN==SC_3 then key(VK_F3,UP) return true
+		elseif SCAN==SC_J then sendScan(SC_DELETE,UP) return true
+		elseif SCAN==SC_I then sendScan(SC_HOME,UP) return true
+		elseif SCAN==SC_K then sendScan(SC_END,UP) return true
+		elseif SCAN==SC_O then sendScan(SC_PAGEUP,UP) return true
+		elseif SCAN==SC_L then sendScan(SC_PAGEDOWN,UP) return true
+		elseif SCAN==SC_SPACE then sendScan(SC_BS,UP) return true
+		elseif SCAN==SC_1 then sendScan(SC_F1,UP) return true
+		elseif SCAN==SC_2 then sendScan(SC_F2,UP) return true
+		elseif SCAN==SC_3 then sendScan(SC_F3,UP) return true
 		elseif SCAN==SC_4 then
 			if SHIFT and DOWN and R==false then
 				system.forceKillActiveApp() return true
 			else
-				key(VK_F4,UP)
+				sendScan(SC_F4,UP)
 			end
 		return true
-		elseif SCAN==SC_5 then key(VK_F5,UP) return true
-		elseif SCAN==SC_6 then key(VK_F6,UP) return true
-		elseif SCAN==SC_7 then key(VK_F7,UP) return true
-		elseif SCAN==SC_8 then key(VK_F8,UP) return true
-		elseif SCAN==SC_9 then key(VK_F9,UP) return true
-		elseif SCAN==SC_0 then key(VK_F10,UP) return true
-		elseif SCAN==SC_MINUS then key(VK_F11,UP) return true
-		elseif SCAN==SC_EQUAL then key(VK_F12,UP) return true
+		elseif SCAN==SC_5 then sendScan(SC_F5,UP) return true
+		elseif SCAN==SC_6 then sendScan(SC_F6,UP) return true
+		elseif SCAN==SC_7 then sendScan(SC_F7,UP) return true
+		elseif SCAN==SC_8 then sendScan(SC_F8,UP) return true
+		elseif SCAN==SC_9 then sendScan(SC_F9,UP) return true
+		elseif SCAN==SC_0 then sendScan(SC_F10,UP) return true
+		elseif SCAN==SC_MINUS then sendScan(SC_F11,UP) return true
+		elseif SCAN==SC_EQUAL then sendScan(SC_F12,UP) return true
 		end
 	end
 
