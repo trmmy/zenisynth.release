@@ -1,3 +1,13 @@
+function ScanRepeat(scan,count)
+	time=2
+	if count>20 then time=3 end
+	if count>30 then time=6 end
+	for i=1,time do
+		sendScan(scan,false)
+		sendScan(scan,true)
+	end
+end
+
 function SX.XR()
 
 	if SCAN==SC_XR and UP and ONESHOT then
@@ -5,10 +15,36 @@ function SX.XR()
 	end
 
 	if XR then
-		if SCAN==SC_E then sendScan(SC_UP,UP) return true
-		elseif SCAN==SC_D then sendScan(SC_DOWN,UP) return true
-		elseif SCAN==SC_S then sendScan(SC_LEFT,UP) return true
-		elseif SCAN==SC_F then sendScan(SC_RIGHT,UP) return true
+		THRESHOLD=7
+		if SCAN==SC_E then
+			if RCOUNT>THRESHOLD then
+				ScanRepeat(SC_UP,RCOUNT)
+			else
+				sendScan(SC_UP,UP)
+			end
+			return true
+		elseif SCAN==SC_D then
+			if RCOUNT>THRESHOLD then
+				ScanRepeat(SC_DOWN,RCOUNT)
+			else
+				sendScan(SC_DOWN,UP)
+			end
+			return true
+		elseif SCAN==SC_S then
+			if RCOUNT>THRESHOLD then
+				ScanRepeat(SC_LEFT,RCOUNT)
+			else
+				sendScan(SC_LEFT,UP)
+			end
+			return true
+		elseif SCAN==SC_F then
+			if RCOUNT>THRESHOLD then
+				ScanRepeat(SC_RIGHT,RCOUNT)
+			else
+				sendScan(SC_RIGHT,UP)
+			end
+			return true
+		
 		elseif SCAN==SC_SEMICOLON then sendScan(SC_ENTER,UP) return true
 		elseif SCAN==SC_XR then
 			return true
